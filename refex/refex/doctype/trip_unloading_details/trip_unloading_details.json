@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "creation": "2025-08-05 16:08:38.982420",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "time_date_month",
+  "challan_no",
+  "unloading_vendor_po_number",
+  "unloading_vendor_name",
+  "unloading_bill_number",
+  "column_break_tbdm",
+  "payment_type",
+  "delivery_lead_km_changes",
+  "delivery_chainage_site_name",
+  "km_range_from",
+  "km_range_to",
+  "lead_km"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "time_date_month",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Time, Date, Month"
+  },
+  {
+   "columns": 2,
+   "fieldname": "challan_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Challan No"
+  },
+  {
+   "columns": 2,
+   "fieldname": "unloading_vendor_po_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unloading vendor PO number",
+   "options": "Purchase Order"
+  },
+  {
+   "columns": 2,
+   "fieldname": "unloading_vendor_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unloading vendor Name",
+   "options": "Supplier"
+  },
+  {
+   "columns": 1,
+   "fieldname": "payment_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Payment Type",
+   "options": "Rental\nMT\nHourly"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "delivery_lead_km_changes",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Delivery Lead km changes"
+  },
+  {
+   "columns": 2,
+   "fieldname": "delivery_chainage_site_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Delivery /Chainage Site Name",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "km_range_from",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "KM range From",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "km_range_to",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "KM range To",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "lead_km",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Lead km",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "unloading_bill_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unloading Bill Number",
+   "options": "Purchase Invoice"
+  },
+  {
+   "fieldname": "column_break_tbdm",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-11 10:48:14.408876",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Trip Unloading Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

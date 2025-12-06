@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "creation": "2025-08-05 19:28:05.650870",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "document_type",
+  "issued_date",
+  "expiry_date",
+  "issued_by",
+  "column_break_altc",
+  "file_upload",
+  "status",
+  "renewal_reminder_date",
+  "section_break_uiee",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "document_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Document Type",
+   "options": "Insurance\nFC\nLicense"
+  },
+  {
+   "columns": 2,
+   "fieldname": "issued_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Issued Date"
+  },
+  {
+   "columns": 2,
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Expiry Date"
+  },
+  {
+   "columns": 2,
+   "fieldname": "issued_by",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Issued By"
+  },
+  {
+   "columns": 2,
+   "fieldname": "file_upload",
+   "fieldtype": "Attach",
+   "label": "File Upload"
+  },
+  {
+   "columns": 1,
+   "default": "1",
+   "fieldname": "status",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Status"
+  },
+  {
+   "columns": 2,
+   "fieldname": "renewal_reminder_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Renewal reminder Date"
+  },
+  {
+   "columns": 4,
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_altc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_uiee",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-11 10:45:48.857667",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Vehicle Document Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,298 @@
+{
+ "actions": [],
+ "creation": "2025-08-05 15:31:26.904007",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "item_group",
+  "item_code",
+  "item_name",
+  "column_break_wzdk",
+  "lead_km",
+  "leaddelivery_site_name",
+  "rate_section",
+  "quantity",
+  "revised_quantity",
+  "column_break_ullk",
+  "rate_per_unit",
+  "revised_rate",
+  "amount",
+  "section_break_inog",
+  "discount",
+  "discount_amount",
+  "base_price_after_discount",
+  "column_break_ysfp",
+  "gst",
+  "gst_amount",
+  "total_amount",
+  "vehicle_type_details_section",
+  "vehicle_type",
+  "vehicle",
+  "vendor",
+  "billing_type_details_section",
+  "billing_type",
+  "hourly_rate_per_month",
+  "rate_per_mt",
+  "rent_per_month",
+  "column_break_vrue",
+  "diesel_claimable",
+  "refex_diesel_slip_no",
+  "diesel_vendor_po_no",
+  "diesel_vendor_bill_no",
+  "claimable_diesel_quantity",
+  "diesel_advance_amount",
+  "loading_vendor_po_no",
+  "loading_vendor_bill_no"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item_name.lead_km",
+   "fieldname": "lead_km",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Lead Km"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_wzdk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "item_name.lead_delivery_site_name",
+   "fieldname": "leaddelivery_site_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Lead/Delivery site Name"
+  },
+  {
+   "fieldname": "rate_section",
+   "fieldtype": "Section Break",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "revised_quantity",
+   "fieldtype": "Float",
+   "label": "Revised Quantity"
+  },
+  {
+   "fieldname": "column_break_ullk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate_per_unit",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate per unit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "revised_rate",
+   "fieldtype": "Currency",
+   "label": "Revised Rate"
+  },
+  {
+   "fieldname": "section_break_inog",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ysfp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "label": "Item Group",
+   "options": "Item Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Percent",
+   "label": "Discount%"
+  },
+  {
+   "fieldname": "gst",
+   "fieldtype": "Percent",
+   "label": "GST%",
+   "read_only": 1
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "base_price_after_discount",
+   "fieldtype": "Currency",
+   "label": "Base Price After Discount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gst_amount",
+   "fieldtype": "Currency",
+   "label": "GST Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_type_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Type Details"
+  },
+  {
+   "fieldname": "vehicle_type",
+   "fieldtype": "Select",
+   "label": "Vehicle Type",
+   "options": "\nIn-house\nOut-source",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicle",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "label": "Vendor",
+   "options": "Supplier",
+   "read_only": 1
+  },
+  {
+   "fieldname": "billing_type_details_section",
+   "fieldtype": "Section Break",
+   "label": "Billing Type Details"
+  },
+  {
+   "fieldname": "billing_type",
+   "fieldtype": "Select",
+   "label": "Billing Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hourly_rate_per_month",
+   "fieldtype": "Currency",
+   "label": "Hourly rate per month",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rate_per_mt",
+   "fieldtype": "Currency",
+   "label": "Rate per MT",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rent_per_month",
+   "fieldtype": "Currency",
+   "label": "Rent per month",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vrue",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "diesel_claimable",
+   "fieldtype": "Check",
+   "label": "Diesel Claimable",
+   "read_only": 1
+  },
+  {
+   "fieldname": "refex_diesel_slip_no",
+   "fieldtype": "Data",
+   "label": "Refex Diesel slip no",
+   "read_only": 1
+  },
+  {
+   "fieldname": "diesel_vendor_po_no",
+   "fieldtype": "Link",
+   "label": "Diesel Vendor PO No",
+   "options": "Purchase Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "diesel_vendor_bill_no",
+   "fieldtype": "Link",
+   "label": "Diesel vendor bill no",
+   "options": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "claimable_diesel_quantity",
+   "fieldtype": "Float",
+   "label": "Claimable diesel quantity",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "diesel_vendor_po_no.grand_total",
+   "fieldname": "diesel_advance_amount",
+   "fieldtype": "Currency",
+   "label": "Diesel Advance Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "loading_vendor_po_no",
+   "fieldtype": "Link",
+   "label": "Loading Vendor PO No.",
+   "options": "Purchase Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "loading_vendor_bill_no",
+   "fieldtype": "Link",
+   "label": "Loading Vendor Bill No",
+   "options": "Purchase Invoice",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-20 19:27:26.213253",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Purchase Order Amendment Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

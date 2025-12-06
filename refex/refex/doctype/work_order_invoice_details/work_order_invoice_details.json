@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "creation": "2025-08-05 19:36:54.064572",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "invoice_number",
+  "invoice_date",
+  "supplier",
+  "column_break_wyku",
+  "amount",
+  "status"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "invoice_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Invoice Number",
+   "options": "Purchase Invoice"
+  },
+  {
+   "columns": 2,
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Invoice Date"
+  },
+  {
+   "columns": 2,
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "columns": 2,
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount"
+  },
+  {
+   "columns": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pending\nPaid\nPartially Paid"
+  },
+  {
+   "fieldname": "column_break_wyku",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-11 10:46:10.524651",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Work Order Invoice Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,308 @@
+{
+ "actions": [],
+ "autoname": "JC-.YYYY.-",
+ "creation": "2025-08-05 18:12:46.398840",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "job_card_details_section",
+  "service_id",
+  "service_category",
+  "created_by",
+  "opening_date_and_time",
+  "closing_date_and_time",
+  "vehicle_name",
+  "odometer_reading",
+  "engine_number",
+  "chassis_number",
+  "site",
+  "nature_of_defect",
+  "column_break_cktv",
+  "job_card_status",
+  "job_allocation",
+  "outsourced_vendor_name",
+  "oem_name",
+  "approval_status",
+  "approver",
+  "approved_date_time",
+  "incident_report",
+  "warranty_amc_details",
+  "section_break_yxoy",
+  "defect_name",
+  "description_of_job_card",
+  "estimation_details_section",
+  "estimate_details",
+  "other_charges_section",
+  "other_charges",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_card_details_section",
+   "fieldtype": "Section Break",
+   "label": "Job Card Details"
+  },
+  {
+   "columns": 2,
+   "fieldname": "service_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Service ID",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "service_category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Service Category",
+   "options": "Item Group",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Created By",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "opening_date_and_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Opening date and time",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "closing_date_and_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Closing Date and Time",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "vehicle_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle Name",
+   "options": "Vehicle"
+  },
+  {
+   "columns": 1,
+   "fieldname": "odometer_reading",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Odometer Reading",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fetch_from": "vehicle_name.vehicle_value",
+   "fieldname": "engine_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Engine Number",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fetch_from": "vehicle_name.chassis_no",
+   "fieldname": "chassis_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Chassis Number",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "site",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Site",
+   "options": "KMPCL-CHP\nNTPC\nBTPS\nCTPS\nADANI\nKTPS"
+  },
+  {
+   "columns": 1,
+   "fieldname": "nature_of_defect",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Nature of defect",
+   "options": "Accident\nIncident"
+  },
+  {
+   "columns": 4,
+   "fieldname": "defect_name",
+   "fieldtype": "Small Text",
+   "label": "Defect Name"
+  },
+  {
+   "columns": 4,
+   "fieldname": "description_of_job_card",
+   "fieldtype": "Small Text",
+   "label": "Description of Job Card"
+  },
+  {
+   "columns": 1,
+   "default": "Open",
+   "fieldname": "job_card_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Job card status",
+   "options": "Open\nWNS\nWIP\nAWP\nAWL\nAWS\nDIP\nClosed",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "job_allocation",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Job Allocation",
+   "options": "Inhouse\nOutsource\nOEM",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "depends_on": "eval:doc.job_allocation == 'Outsource'",
+   "fieldname": "outsourced_vendor_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Outsourced Vendor Name",
+   "options": "Supplier"
+  },
+  {
+   "columns": 2,
+   "depends_on": "eval:doc.job_allocation == 'OEM'",
+   "fieldname": "oem_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "OEM Name"
+  },
+  {
+   "columns": 1,
+   "default": "Pending",
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Approval status",
+   "options": "Pending\nApproved\nRejected",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "approver",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Approver",
+   "options": "Employee"
+  },
+  {
+   "columns": 2,
+   "fieldname": "approved_date_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Approved date & time",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "incident_report",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Incident report",
+   "options": "Incident Report"
+  },
+  {
+   "columns": 2,
+   "fieldname": "warranty_amc_details",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Warranty Details / AMC Details"
+  },
+  {
+   "fieldname": "estimation_details_section",
+   "fieldtype": "Section Break",
+   "label": "Estimation Details"
+  },
+  {
+   "fieldname": "estimate_details",
+   "fieldtype": "Table",
+   "label": "Estimate Details",
+   "options": "Job Card Estimate Details"
+  },
+  {
+   "fieldname": "other_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Other Charges"
+  },
+  {
+   "fieldname": "other_charges",
+   "fieldtype": "Table",
+   "label": "Other Charges",
+   "options": "Job Card Other Charges"
+  },
+  {
+   "fieldname": "column_break_cktv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_yxoy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Maintenance Job Card",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-11 10:43:25.172981",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Maintenance Job Card",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Fleet Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Fleet User",
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

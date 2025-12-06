@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-11 17:54:20.218047",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "project_site_name",
+  "loadingsource_location_name",
+  "unloading_location_name",
+  "column_break_iduk",
+  "project_site_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project_site_type",
+   "fieldtype": "Select",
+   "label": "Project Site Type",
+   "options": "\nProject Site\nLoading/Source Location\nUnloading Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_iduk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.project_site_type == \"Project Site\"",
+   "fieldname": "project_site_name",
+   "fieldtype": "Data",
+   "label": "Project Site Name ",
+   "mandatory_depends_on": "eval:doc.project_site_type == \"Project Site\""
+  },
+  {
+   "depends_on": "eval:doc.project_site_type == \"Loading/Source Location\"",
+   "fieldname": "loadingsource_location_name",
+   "fieldtype": "Data",
+   "label": "Loading/Source Location Name",
+   "mandatory_depends_on": "eval:doc.project_site_type == \"Loading/Source Location\""
+  },
+  {
+   "depends_on": "eval:doc.project_site_type == \"Unloading Location\"",
+   "fieldname": "unloading_location_name",
+   "fieldtype": "Data",
+   "label": "Unloading Location Name",
+   "mandatory_depends_on": "eval:doc.project_site_type == \"Unloading Location\""
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-11 18:04:19.012172",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Project Site or Location",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

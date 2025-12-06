@@ -1,0 +1,75 @@
+{
+  "doctype": "DocType",
+  "name": "Amended LOA Contract Scope",
+  "module": "Refex",
+  "custom": 1,
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "range",
+      "fieldtype": "Data",
+      "label": "Range",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "service_description_of_work",
+      "fieldtype": "Data",
+      "label": "Service Description of work",
+      "in_list_view": 1,
+      "columns": 3
+    },
+    {
+      "fieldname": "uom",
+      "fieldtype": "Link",
+      "label": "UOM",
+      "options": "UOM",
+      "in_list_view": 1,
+      "columns": 1
+    },
+    {
+      "fieldname": "rate_exclusive_of_gst",
+      "fieldtype": "Currency",
+      "label": "Rate (Exclusive of GST)",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "gst",
+      "fieldtype": "Percent",
+      "label": "GST",
+      "in_list_view": 1,
+      "columns": 1
+    },
+    {
+      "fieldname": "rate_inclusive_of_gst",
+      "fieldtype": "Currency",
+      "label": "Rate (Inclusive of GST)",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "price",
+      "fieldtype": "Currency",
+      "label": "Price",
+      "in_list_view": 1,
+      "columns": 2
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Project Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ]
+}

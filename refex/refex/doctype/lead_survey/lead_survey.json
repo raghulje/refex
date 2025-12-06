@@ -1,0 +1,443 @@
+{
+ "actions": [],
+ "autoname": "LS-.YYYY.-",
+ "creation": "2025-08-05 15:25:36.031177",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "lead_details_section",
+  "lead_delivery_site_name",
+  "loa_name",
+  "loa_code",
+  "column_break_1",
+  "service_item_code",
+  "service_category",
+  "service_item_name",
+  "contract_type",
+  "route_details_section",
+  "lead_range_from",
+  "lead_range_to",
+  "lead_km",
+  "column_break_2",
+  "round_trip_kms",
+  "route_description",
+  "section_break_hpbk",
+  "item_and_chainage_details",
+  "vehicle_details_section",
+  "vehicle_type",
+  "vehicle_category",
+  "vehicle",
+  "column_break_3",
+  "no_of_wheels",
+  "mileage",
+  "approved_diesel_quantity",
+  "location_details_section",
+  "loading_map_location",
+  "unloading_map_location",
+  "column_break_4",
+  "toll_details",
+  "route_conditions_section",
+  "route_hinderances",
+  "road_condition",
+  "unloading_site_approach_road_condition",
+  "trip_details_section",
+  "no_of_trips_per_day",
+  "no_of_trips_per_month",
+  "tonnage_per_trip",
+  "column_break_5",
+  "total_tonnage_day",
+  "cost_breakdown_section",
+  "diesel_consumption_per_trip",
+  "diesel_cost_per_trip",
+  "driver_salary_per_trip",
+  "rm_per_trip",
+  "vehicle_finance_cost_per_trip",
+  "column_break_6",
+  "toll_charges_per_trip",
+  "rto_charges_per_trip",
+  "other_charges_per_trip",
+  "vehicle_agency_margin",
+  "total_cost_per_trip",
+  "cost_analysis_section",
+  "total_cost_per_trip_per_mt",
+  "column_break_7",
+  "total_cost_rs_mt_km",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "lead_details_section",
+   "fieldtype": "Section Break",
+   "label": "Lead Details"
+  },
+  {
+   "fieldname": "lead_delivery_site_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Lead/Delivery site name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "loa_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "LOA Name",
+   "options": "LOA Contract",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "loa_name.loa_number_reference",
+   "fieldname": "loa_code",
+   "fieldtype": "Data",
+   "label": "LOA code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Service Item code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "service_item_code.item_group",
+   "fieldname": "service_category",
+   "fieldtype": "Link",
+   "label": "Service category",
+   "options": "Item Group",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "service_item_code.item_name",
+   "fieldname": "service_item_name",
+   "fieldtype": "Data",
+   "label": "Service item name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "route_details_section",
+   "fieldtype": "Section Break",
+   "label": "Route Details"
+  },
+  {
+   "fieldname": "lead_range_from",
+   "fieldtype": "Date",
+   "label": "Lead Range From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lead_range_to",
+   "fieldtype": "Date",
+   "label": "Lead Range To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lead_km",
+   "fieldtype": "Float",
+   "label": "Lead Km",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "round_trip_kms",
+   "fieldtype": "Float",
+   "label": "ROUND TRIP KMS",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "route_description",
+   "fieldtype": "Data",
+   "label": "Route description"
+  },
+  {
+   "fieldname": "vehicle_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Details"
+  },
+  {
+   "fieldname": "vehicle_type",
+   "fieldtype": "Select",
+   "label": "Vehicle Type",
+   "options": "\nIn House\nOut Source",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle_category",
+   "fieldtype": "Link",
+   "label": "Vehicle Category",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle.wheels",
+   "fieldname": "no_of_wheels",
+   "fieldtype": "Select",
+   "label": "No.of wheels",
+   "options": "\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.fuel_type",
+   "fieldname": "mileage",
+   "fieldtype": "Float",
+   "label": "Mileage",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_diesel_quantity",
+   "fieldtype": "Float",
+   "label": "Approved Diesel quantity",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location_details_section",
+   "fieldtype": "Section Break",
+   "label": "Location Details"
+  },
+  {
+   "fieldname": "loading_map_location",
+   "fieldtype": "Data",
+   "label": "LOADING MAP LOCATION (GEO LOCATION)"
+  },
+  {
+   "fieldname": "unloading_map_location",
+   "fieldtype": "Data",
+   "label": "UNLOADING MAP LOCATION (GEO LOCATION)"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "toll_details",
+   "fieldtype": "Check",
+   "label": "TOLL DETAILS"
+  },
+  {
+   "fieldname": "route_conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Route Conditions"
+  },
+  {
+   "fieldname": "route_hinderances",
+   "fieldtype": "Text",
+   "label": "ROUTE HINDERANCES"
+  },
+  {
+   "fieldname": "road_condition",
+   "fieldtype": "Text",
+   "label": "ROAD CONDITION"
+  },
+  {
+   "fieldname": "unloading_site_approach_road_condition",
+   "fieldtype": "Text",
+   "label": "UNLOADING SITE APPROACH ROAD CONDITION"
+  },
+  {
+   "fieldname": "trip_details_section",
+   "fieldtype": "Section Break",
+   "label": "Trip Details"
+  },
+  {
+   "fieldname": "no_of_trips_per_day",
+   "fieldtype": "Int",
+   "label": "No.of trips per day",
+   "reqd": 1
+  },
+  {
+   "fieldname": "no_of_trips_per_month",
+   "fieldtype": "Int",
+   "label": "No. of trips per month",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tonnage_per_trip",
+   "fieldtype": "Float",
+   "label": "Tonnage per trip",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_tonnage_day",
+   "fieldtype": "Float",
+   "label": "Total tonnage/day",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_breakdown_section",
+   "fieldtype": "Section Break",
+   "label": "Cost Breakdown"
+  },
+  {
+   "fieldname": "diesel_consumption_per_trip",
+   "fieldtype": "Float",
+   "label": "Diesel consumption per trip",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "diesel_cost_per_trip",
+   "fieldtype": "Currency",
+   "label": "Diesel cost per trip",
+   "reqd": 1
+  },
+  {
+   "fieldname": "driver_salary_per_trip",
+   "fieldtype": "Currency",
+   "label": "Driver salary per trip",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rm_per_trip",
+   "fieldtype": "Currency",
+   "label": "R&M per trip",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle_finance_cost_per_trip",
+   "fieldtype": "Currency",
+   "label": "Vehicle finance cost per trip",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "toll_charges_per_trip",
+   "fieldtype": "Currency",
+   "label": "Toll charges per trip"
+  },
+  {
+   "fieldname": "rto_charges_per_trip",
+   "fieldtype": "Currency",
+   "label": "RTO charges per trip"
+  },
+  {
+   "fieldname": "other_charges_per_trip",
+   "fieldtype": "Currency",
+   "label": "Other charges per trip"
+  },
+  {
+   "fieldname": "vehicle_agency_margin",
+   "fieldtype": "Currency",
+   "label": "vehicle Agency Margin"
+  },
+  {
+   "fieldname": "total_cost_per_trip",
+   "fieldtype": "Currency",
+   "label": "Total cost per trip",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_analysis_section",
+   "fieldtype": "Section Break",
+   "label": "Cost Analysis"
+  },
+  {
+   "fieldname": "total_cost_per_trip_per_mt",
+   "fieldtype": "Currency",
+   "label": "Total cost per trip per MT (Rs/MT)"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_cost_rs_mt_km",
+   "fieldtype": "Currency",
+   "label": "Total cost(Rs/MT/KM)"
+  },
+  {
+   "fieldname": "contract_type",
+   "fieldtype": "Select",
+   "label": "Contract Type"
+  },
+  {
+   "fieldname": "section_break_hpbk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item_and_chainage_details",
+   "fieldtype": "Table",
+   "label": "Item and Chainage Details",
+   "options": "Sales Order Item"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Lead Survey",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-11 10:42:31.067806",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Lead Survey",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Project Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Project User",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "lead_delivery_site_name",
+ "track_changes": 1
+}

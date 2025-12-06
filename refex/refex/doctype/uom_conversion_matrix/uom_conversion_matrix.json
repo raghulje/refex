@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-13 11:30:20.151917",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "loa_contract",
+  "contract_qunatity",
+  "contract_uom",
+  "column_break_dtoo",
+  "project",
+  "section_break_iljx",
+  "uom_conversion_item"
+ ],
+ "fields": [
+  {
+   "fieldname": "loa_contract",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "LOA Contract",
+   "options": "LOA Contract",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "loa_contract.overall_quantity_to_be_executed",
+   "fieldname": "contract_qunatity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Contract Qunatity",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "loa_contract.custom_uom",
+   "fieldname": "contract_uom",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Contract UOM",
+   "reqd": 1
+  },
+  {
+   "fieldname": "uom_conversion_item",
+   "fieldtype": "Table",
+   "label": "UOM Conversion Item",
+   "options": "UOM Conversion Matrix Item"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_dtoo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_iljx",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-13 13:45:27.831988",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "UOM Conversion Matrix",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

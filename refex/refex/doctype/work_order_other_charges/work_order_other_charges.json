@@ -1,0 +1,90 @@
+{
+  "doctype": "DocType",
+  "name": "Work Order Other Charges",
+  "module": "Refex",
+  "custom": 1,
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "labour_charges",
+      "fieldtype": "Currency",
+      "label": "Labour Charges",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "repair_amount",
+      "fieldtype": "Currency",
+      "label": "Repair Amount",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "parts_amount",
+      "fieldtype": "Currency",
+      "label": "Parts Amount",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "gst_on_maintenance",
+      "fieldtype": "Currency",
+      "label": "GST on Maintenance",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "gst_on_spare_parts",
+      "fieldtype": "Currency",
+      "label": "GST on Spare/Parts",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "total_amount",
+      "fieldtype": "Currency",
+      "label": "Total Amount",
+      "read_only": 1,
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "tds",
+      "fieldtype": "Currency",
+      "label": "TDS",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "net_amount",
+      "fieldtype": "Currency",
+      "label": "Net Amount",
+      "read_only": 1,
+      "in_list_view": 1,
+      "columns": 2
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Manufacturing Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Manufacturing User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ]
+}

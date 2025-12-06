@@ -1,0 +1,176 @@
+{
+ "actions": [],
+ "creation": "2025-08-05 15:25:35.635555",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "item_group",
+  "item_code",
+  "item_name",
+  "column_break_evhf",
+  "lead_km",
+  "lead_delivery_site_name",
+  "rate_section",
+  "quantity",
+  "revised_quantity",
+  "column_break_izvw",
+  "rate_per_unit",
+  "revised_rate",
+  "amount",
+  "section_break_hrgr",
+  "discount",
+  "discount_amount",
+  "base_price_after_discount",
+  "total_base_value",
+  "column_break_iwym",
+  "gst",
+  "gst_value",
+  "total_value"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Service Item Name",
+   "options": "Item"
+  },
+  {
+   "columns": 2,
+   "fetch_from": "item_name.lead_delivery_site_name",
+   "fieldname": "lead_delivery_site_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Lead/Delivery site Name"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "item_name.lead_km",
+   "fieldname": "lead_km",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Lead Km",
+   "precision": "2"
+  },
+  {
+   "columns": 1,
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "revised_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Revised Quantity",
+   "precision": "2"
+  },
+  {
+   "columns": 1,
+   "fieldname": "rate_per_unit",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate per unit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_evhf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revised_rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Revised Rate"
+  },
+  {
+   "fieldname": "rate_section",
+   "fieldtype": "Section Break",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "column_break_izvw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Service Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_hrgr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Float",
+   "label": "Discount Amount"
+  },
+  {
+   "fieldname": "gst_value",
+   "fieldtype": "Float",
+   "label": "GST Value"
+  },
+  {
+   "fieldname": "column_break_iwym",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Percent",
+   "label": "Discount%"
+  },
+  {
+   "fieldname": "gst",
+   "fieldtype": "Percent",
+   "label": "GST %"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "base_price_after_discount",
+   "fieldtype": "Float",
+   "label": "Base Price After Discount"
+  },
+  {
+   "fieldname": "total_base_value",
+   "fieldtype": "Float",
+   "label": "Total Base Value"
+  },
+  {
+   "fieldname": "total_value",
+   "fieldtype": "Float",
+   "label": "Total Value"
+  },
+  {
+   "fetch_from": "item_code.item_group",
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "label": "Service Item Group",
+   "options": "Item Group",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-20 16:49:40.700810",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Sale Order Amendment Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

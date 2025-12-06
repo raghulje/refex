@@ -1,0 +1,424 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-07 12:52:50.669851",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "incident_details_tab",
+  "incident_details_section",
+  "vehicle",
+  "vehicle_speed_during_incident_kmhr",
+  "loading_time_date",
+  "source_location__loading_point",
+  "unloading_point",
+  "current_odometer_reading",
+  "damage",
+  "images",
+  "fircsr",
+  "column_break_altx",
+  "driver",
+  "ash_type",
+  "incident_date_time",
+  "incident_address",
+  "incident_cause",
+  "project",
+  "injury",
+  "product_loss",
+  "fir_copy",
+  "vehicle_specifications_tab",
+  "vehicle_details_section",
+  "license_plate",
+  "segmentvehicle_type",
+  "oem_make",
+  "model_engine_horse_power",
+  "column_break_donx",
+  "fuel_type",
+  "variant_wheels",
+  "procurement_mode",
+  "odometer_reading_at_start",
+  "weight_capacity_section",
+  "tare_weight",
+  "gross_weight",
+  "column_break_sooq",
+  "carrying_capacity",
+  "vehicle_identifictions_section",
+  "engine_number",
+  "chassis_number",
+  "insurance",
+  "idv",
+  "column_break_wacs",
+  "asset_owner_company",
+  "manufactured_date",
+  "purchase_date",
+  "registration_date",
+  "driver_details_tab",
+  "driver_name",
+  "license_number",
+  "aadhar_no",
+  "column_break_vpks",
+  "license_valid_from",
+  "license_valid_till",
+  "dob"
+ ],
+ "fields": [
+  {
+   "fieldname": "incident_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Incident Details"
+  },
+  {
+   "fieldname": "incident_details_section",
+   "fieldtype": "Section Break",
+   "label": "Incident Details"
+  },
+  {
+   "fieldname": "loading_time_date",
+   "fieldtype": "Datetime",
+   "label": "Loading time & Date"
+  },
+  {
+   "fieldname": "unloading_point",
+   "fieldtype": "Data",
+   "label": "Unloading Point"
+  },
+  {
+   "fieldname": "current_odometer_reading",
+   "fieldtype": "Int",
+   "label": "Current Odometer Reading"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle  ",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "column_break_altx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ash_type",
+   "fieldtype": "Select",
+   "label": "Ash type",
+   "options": "\nFly Ash\nPond Ash"
+  },
+  {
+   "fieldname": "incident_date_time",
+   "fieldtype": "Datetime",
+   "label": "Incident Date & Time"
+  },
+  {
+   "fieldname": "incident_address",
+   "fieldtype": "Data",
+   "label": "Incident Address"
+  },
+  {
+   "fieldname": "incident_cause",
+   "fieldtype": "Data",
+   "label": "Incident Cause"
+  },
+  {
+   "fieldname": "injury",
+   "fieldtype": "Data",
+   "label": "Injury"
+  },
+  {
+   "fieldname": "damage",
+   "fieldtype": "Data",
+   "label": "Damage"
+  },
+  {
+   "fieldname": "vehicle_speed_during_incident_kmhr",
+   "fieldtype": "Float",
+   "label": "Vehicle Speed During Incident (km/hr)"
+  },
+  {
+   "fieldname": "source_location__loading_point",
+   "fieldtype": "Link",
+   "label": "Source Location / Loading Point",
+   "options": "Location"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Driver"
+  },
+  {
+   "fieldname": "product_loss",
+   "fieldtype": "Select",
+   "label": "Product loss",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Attach",
+   "label": "Images"
+  },
+  {
+   "fieldname": "fircsr",
+   "fieldtype": "Select",
+   "label": "FIR/CSR",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.fircsr == \"Yes\"",
+   "fieldname": "fir_copy",
+   "fieldtype": "Attach",
+   "label": "FIR copy"
+  },
+  {
+   "fieldname": "vehicle_specifications_tab",
+   "fieldtype": "Tab Break",
+   "label": "Vehicle Specifications"
+  },
+  {
+   "fieldname": "vehicle_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Details"
+  },
+  {
+   "fetch_from": "vehicle.license_plate",
+   "fieldname": "license_plate",
+   "fieldtype": "Data",
+   "label": "License Plate",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.segment_vehicle_type",
+   "fieldname": "segmentvehicle_type",
+   "fieldtype": "Select",
+   "label": "Segment/Vehicle type",
+   "options": "\nTipper\nExcavator\nWheel Loader",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.oem_make",
+   "fieldname": "oem_make",
+   "fieldtype": "Select",
+   "label": "OEM Make",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.custom_model__engine_horse_power",
+   "fieldname": "model_engine_horse_power",
+   "fieldtype": "Int",
+   "label": "Model - Engine horse power",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.fuel_type",
+   "fieldname": "fuel_type",
+   "fieldtype": "Select",
+   "label": "Fuel Type",
+   "options": "\nPetrol\nDiesel\nNatural Gas\nElectric",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_donx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle.variant_wheels",
+   "fieldname": "variant_wheels",
+   "fieldtype": "Select",
+   "label": "Variant [no.of wheels]",
+   "options": "\n12 W\n16 W\n18 W",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.procurement_mode",
+   "fieldname": "procurement_mode",
+   "fieldtype": "Select",
+   "label": "Procurement Mode",
+   "options": "\nOld\nNew",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.odometer_reading_start",
+   "fieldname": "odometer_reading_at_start",
+   "fieldtype": "Int",
+   "label": "Odometer Reading at Start",
+   "read_only": 1
+  },
+  {
+   "fieldname": "weight_capacity_section",
+   "fieldtype": "Section Break",
+   "label": "Weight capacity"
+  },
+  {
+   "fetch_from": "vehicle.tare_weight",
+   "fieldname": "tare_weight",
+   "fieldtype": "Int",
+   "label": "Tare Weight",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.carrying_capacity",
+   "fieldname": "carrying_capacity",
+   "fieldtype": "Int",
+   "label": "Carrying Capacity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sooq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle.gross_weight",
+   "fieldname": "gross_weight",
+   "fieldtype": "Int",
+   "label": "Gross Weight",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_identifictions_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Identifictions"
+  },
+  {
+   "fetch_from": "vehicle.custom_engine_number",
+   "fieldname": "engine_number",
+   "fieldtype": "Int",
+   "label": "Engine Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.chassis_no",
+   "fieldname": "chassis_number",
+   "fieldtype": "Data",
+   "label": "Chassis Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.custom_insurance_",
+   "fieldname": "insurance",
+   "fieldtype": "Data",
+   "label": "Insurance",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.custom_idv",
+   "fieldname": "idv",
+   "fieldtype": "Data",
+   "label": "IDV",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wacs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle.custom_asset_owner_company",
+   "fieldname": "asset_owner_company",
+   "fieldtype": "Data",
+   "label": "Asset Owner Company",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.custom_manufactured_date",
+   "fieldname": "manufactured_date",
+   "fieldtype": "Date",
+   "label": "Manufactured Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.custom_purchase_date",
+   "fieldname": "purchase_date",
+   "fieldtype": "Date",
+   "label": "Purchase Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.custom_registration_date",
+   "fieldname": "registration_date",
+   "fieldtype": "Date",
+   "label": "Registration Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "driver_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Driver Details"
+  },
+  {
+   "fetch_from": "driver.full_name",
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "driver.license_number",
+   "fieldname": "license_number",
+   "fieldtype": "Data",
+   "label": "License Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "driver.custom_aadhar_no",
+   "fieldname": "aadhar_no",
+   "fieldtype": "Int",
+   "label": "Aadhar No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vpks",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "driver.custom_license_valid_from",
+   "fieldname": "license_valid_from",
+   "fieldtype": "Date",
+   "label": "License Valid From",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "driver.custom_license_valid_till",
+   "fieldname": "license_valid_till",
+   "fieldtype": "Int",
+   "label": "License Valid Till",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "driver.custom_dob",
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "DOB",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-11 11:07:24.478819",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Incident Report",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

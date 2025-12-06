@@ -1,0 +1,205 @@
+{
+ "actions": [],
+ "creation": "2025-08-05 16:08:38.798148",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_type",
+  "vehicle_category",
+  "vehicle",
+  "wheel_type",
+  "challan_number",
+  "sale_order",
+  "transportation_vendor_po_number",
+  "transportation_vendor_name",
+  "vehicle_number",
+  "column_break_npxq",
+  "diesel_claimable",
+  "claimable_diesel_quantity",
+  "actual_diesel_quantity",
+  "diesel_advance_amount",
+  "vendor_rate_for_transportation",
+  "overall_quantity_against_so",
+  "executed_trip_rate",
+  "section_break_qjjh",
+  "refex_diesel_slip_no",
+  "transportation_vendor_bill_no",
+  "diesel_vendor_bill_number"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "vehicle_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Vehicle Type",
+   "options": "In House\nVendor Fleet"
+  },
+  {
+   "columns": 2,
+   "fieldname": "vehicle_category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle Category",
+   "options": "Vehicle"
+  },
+  {
+   "columns": 2,
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle",
+   "options": "Vehicle"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "vehicle.wheels",
+   "fieldname": "wheel_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Wheel type",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "challan_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Challan number"
+  },
+  {
+   "columns": 2,
+   "fieldname": "sale_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sale Order",
+   "options": "Sales Order"
+  },
+  {
+   "columns": 2,
+   "fieldname": "transportation_vendor_po_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transportation vendor PO number",
+   "options": "Purchase Order"
+  },
+  {
+   "columns": 2,
+   "fieldname": "transportation_vendor_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transportation vendor Name",
+   "options": "Supplier"
+  },
+  {
+   "columns": 2,
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Vehicle Number"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "diesel_claimable",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Diesel Claimable?"
+  },
+  {
+   "columns": 1,
+   "depends_on": "eval:doc.diesel_claimable == 1",
+   "fieldname": "claimable_diesel_quantity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Claimable diesel quantity"
+  },
+  {
+   "columns": 1,
+   "depends_on": "eval:doc.diesel_claimable == 1",
+   "fieldname": "actual_diesel_quantity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Actual Diesel quantity"
+  },
+  {
+   "columns": 2,
+   "depends_on": "eval:doc.diesel_claimable == 1",
+   "fieldname": "diesel_advance_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Diesel Advance Amount",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fetch_from": "sale_order.total",
+   "fieldname": "vendor_rate_for_transportation",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Vendor rate for transportation",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fetch_from": "sale_order.total_qty",
+   "fieldname": "overall_quantity_against_so",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Overall quantity against the SO",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "executed_trip_rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Executed Trip rate",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "refex_diesel_slip_no",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Refex diesel slip No"
+  },
+  {
+   "columns": 2,
+   "fieldname": "diesel_vendor_bill_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Diesel Vendor Bill number",
+   "options": "Purchase Invoice"
+  },
+  {
+   "columns": 2,
+   "fieldname": "transportation_vendor_bill_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transportation Vendor Bill NO",
+   "options": "Purchase Invoice"
+  },
+  {
+   "fieldname": "column_break_npxq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_qjjh",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-11 10:47:08.333949",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Trip Transportation Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,335 @@
+{
+  "doctype": "DocType",
+  "name": "Trip Master",
+  "module": "Refex",
+  "custom": 1,
+  "is_submittable": 1,
+  "autoname": "TRIP-.YYYY.-",
+  "naming_rule": "Expression",
+  "fields": [
+    {
+      "fieldname": "trip_details_section",
+      "fieldtype": "Section Break",
+      "label": "Trip Details"
+    },
+    {
+      "fieldname": "project_name",
+      "fieldtype": "Link",
+      "label": "Project Name",
+      "options": "Project",
+      "reqd": 1,
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "project_code",
+      "fieldtype": "Data",
+      "label": "Project Code",
+      "fetch_from": "project_name.name",
+      "read_only": 1,
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "loa_name",
+      "fieldtype": "Link",
+      "label": "LOA Name",
+      "options": "Sales Order",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "time_date_month",
+      "fieldtype": "Datetime",
+      "label": "Time, Date, Month",
+      "reqd": 1,
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "user",
+      "fieldtype": "Link",
+      "label": "User",
+      "options": "User",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "sale_order",
+      "fieldtype": "Link",
+      "label": "Sale Order",
+      "options": "Sales Order",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "trip_status",
+      "fieldtype": "Select",
+      "label": "Trip Status",
+      "options": "Loading\nTransportation\nUnloading",
+      "reqd": 1,
+      "in_list_view": 1,
+      "columns": 1
+    },
+    {
+      "fieldname": "token_challan_no",
+      "fieldtype": "Data",
+      "label": "Token NO/ Challan No (PK)",
+      "reqd": 1,
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "chainage",
+      "fieldtype": "Select",
+      "label": "Chainage",
+      "options": "",
+      "in_list_view": 1,
+      "columns": 1
+    },
+    {
+      "fieldname": "source_location",
+      "fieldtype": "Data",
+      "label": "Source Location",
+      "fetch_from": "project_name.project_name",
+      "read_only": 1,
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "delivery_chainage_site_name",
+      "fieldtype": "Data",
+      "label": "Delivery/Chainage site name",
+      "read_only": 1,
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "chainage_destination_type",
+      "fieldtype": "Data",
+      "label": "Chainage destination Type",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "km_range_from",
+      "fieldtype": "Float",
+      "label": "Km range From",
+      "precision": 2,
+      "in_list_view": 1,
+      "columns": 1
+    },
+    {
+      "fieldname": "km_range_to",
+      "fieldtype": "Float",
+      "label": "Km range To",
+      "precision": 2,
+      "in_list_view": 1,
+      "columns": 1
+    },
+    {
+      "fieldname": "lead_km",
+      "fieldtype": "Float",
+      "label": "Lead Km",
+      "read_only": 1,
+      "precision": 2,
+      "in_list_view": 1,
+      "columns": 1
+    },
+    {
+      "fieldname": "max_diesel_quantity",
+      "fieldtype": "Float",
+      "label": "Max diesel quantity",
+      "precision": 2,
+      "in_list_view": 1,
+      "columns": 1
+    },
+    {
+      "fieldname": "diesel_vendor_po_name",
+      "fieldtype": "Link",
+      "label": "Diesel vendor PO Name",
+      "options": "Purchase Order",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "diesel_vendor_po_code",
+      "fieldtype": "Data",
+      "label": "Diesel vendor PO Code",
+      "fetch_from": "diesel_vendor_po_name.name",
+      "read_only": 1,
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "diesel_rate",
+      "fieldtype": "Currency",
+      "label": "Diesel rate",
+      "fetch_from": "diesel_vendor_po_name.total",
+      "read_only": 1,
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "weighment_details_section",
+      "fieldtype": "Section Break",
+      "label": "Weighment Details"
+    },
+    {
+      "fieldname": "weighment_vendor_name",
+      "fieldtype": "Link",
+      "label": "Weighment vendor Name",
+      "options": "Supplier",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "weighment_no_ref",
+      "fieldtype": "Data",
+      "label": "Weighment NO/Ref",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "empty_vehicle_weight",
+      "fieldtype": "Int",
+      "label": "Empty Vehicle Weight",
+      "in_list_view": 1,
+      "columns": 1
+    },
+    {
+      "fieldname": "loaded_vehicle_weight",
+      "fieldtype": "Int",
+      "label": "Loaded vehicle weight",
+      "in_list_view": 1,
+      "columns": 1
+    },
+    {
+      "fieldname": "net_weight",
+      "fieldtype": "Int",
+      "label": "Net weight",
+      "read_only": 1,
+      "in_list_view": 1,
+      "columns": 1
+    },
+    {
+      "fieldname": "service_item_details_section",
+      "fieldtype": "Section Break",
+      "label": "Service Item Details"
+    },
+    {
+      "fieldname": "loading",
+      "fieldtype": "Table",
+      "label": "Loading",
+      "options": "Trip Loading Details",
+      "in_list_view": 0
+    },
+    {
+      "fieldname": "transportation",
+      "fieldtype": "Table",
+      "label": "Transportation",
+      "options": "Trip Transportation Details",
+      "in_list_view": 0
+    },
+    {
+      "fieldname": "unloading",
+      "fieldtype": "Table",
+      "label": "Unloading",
+      "options": "Trip Unloading Details",
+      "in_list_view": 0
+    },
+    {
+      "fieldname": "trip_billing_status_section",
+      "fieldtype": "Section Break",
+      "label": "Trip billing status"
+    },
+    {
+      "fieldname": "billing_status_of_trip",
+      "fieldtype": "Select",
+      "label": "Billing status of the Trip",
+      "options": "Billed\nPartially Billed\nYet to be billed",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "attachment_section",
+      "fieldtype": "Section Break",
+      "label": "Attachment"
+    },
+    {
+      "fieldname": "challan_document",
+      "fieldtype": "Attach",
+      "label": "Challan / Document",
+      "in_list_view": 0,
+      "columns": 4
+    },
+    {
+      "fieldname": "revenue_section",
+      "fieldtype": "Section Break",
+      "label": "Revenue"
+    },
+    {
+      "fieldname": "customer_rate",
+      "fieldtype": "Currency",
+      "label": "Customer Rate",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "customer_value",
+      "fieldtype": "Currency",
+      "label": "Customer Value",
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "reference_section",
+      "fieldtype": "Section Break",
+      "label": "Reference"
+    },
+    {
+      "fieldname": "avg_mt",
+      "fieldtype": "Float",
+      "label": "Avg MT",
+      "precision": 2,
+      "in_list_view": 1,
+      "columns": 1
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Text",
+      "label": "Remarks",
+      "in_list_view": 0,
+      "columns": 4
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Project Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Project User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 0
+    }
+  ]
+}

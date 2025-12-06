@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "autoname": "EXP-CAT-.YYYY.-",
+ "creation": "2025-08-05 15:12:26.446473",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "expense_category_type",
+  "expense_name",
+  "linked_gl_code",
+  "cost_center",
+  "column_break_ywji",
+  "recurring",
+  "active_flag",
+  "budget_control_enabled",
+  "expense_source",
+  "default_tax_percent"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "expense_category_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Expense Category type",
+   "options": "Direct\nIndirect",
+   "reqd": 1
+  },
+  {
+   "columns": 3,
+   "fieldname": "expense_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Expense name",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "linked_gl_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Linked GL code",
+   "options": "Account"
+  },
+  {
+   "columns": 1,
+   "default": "1",
+   "fieldname": "active_flag",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Active Flag"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "budget_control_enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Budget control Enabled"
+  },
+  {
+   "columns": 2,
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "columns": 1,
+   "fieldname": "default_tax_percent",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Default Tax %",
+   "precision": "2"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "recurring",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Recurring?"
+  },
+  {
+   "columns": 2,
+   "fieldname": "expense_source",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Expense source",
+   "options": "Trip Log\nJob Card\nDriver\nEmployee"
+  },
+  {
+   "fieldname": "column_break_ywji",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "links": [],
+ "modified": "2025-08-11 10:52:50.057302",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Expense Category",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Accounts Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Accounts User",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

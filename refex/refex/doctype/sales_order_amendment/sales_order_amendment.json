@@ -1,0 +1,387 @@
+{
+ "actions": [],
+ "autoname": "SOA-.YYYY.-",
+ "creation": "2025-08-05 15:25:35.799276",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "amendment_details_section",
+  "source",
+  "original_so",
+  "amendment_so",
+  "amendment_dates",
+  "column_break_otpj",
+  "rate",
+  "quantity",
+  "terms_and_conditions",
+  "tenure",
+  "amendment_reason",
+  "project_details_section",
+  "project_code",
+  "project_name",
+  "contract_valid_till",
+  "service__work_order_no",
+  "column_break_vbex",
+  "customer_name",
+  "customer_code",
+  "contract_from_date",
+  "contract_to_date",
+  "revised_from_date",
+  "revised_to_date",
+  "items_section",
+  "items",
+  "section_break_nwse",
+  "column_break_omiy",
+  "column_break_gkrt",
+  "grand_total",
+  "section_break_isap",
+  "original_sales_order",
+  "supporting_document",
+  "gst_and_payment_terms_tab",
+  "payment_terms_section",
+  "payment_terms_template",
+  "payment_schedule",
+  "gst_payment_terms_section",
+  "column_break_kfwa",
+  "gst_applicability",
+  "column_break_aggn",
+  "gst_rule",
+  "security_deposit_terms",
+  "revised_terms_conditions_section",
+  "amended_terms",
+  "revised_terms_and_conditions",
+  "other_terms_section",
+  "policy_obligation_details",
+  "other_remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "amendment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Amendment Details"
+  },
+  {
+   "fieldname": "amendment_reason",
+   "fieldtype": "Small Text",
+   "label": "Amendment Reason"
+  },
+  {
+   "fieldname": "project_details_section",
+   "fieldtype": "Section Break",
+   "label": "Project Details"
+  },
+  {
+   "fetch_from": "project_code.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "original_so.project",
+   "fieldname": "project_code",
+   "fieldtype": "Link",
+   "label": "Project code",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "original_so.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer_name.customer_name",
+   "fieldname": "customer_code",
+   "fieldtype": "Data",
+   "label": "Customer code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_valid_till",
+   "fieldtype": "Date",
+   "label": "Contract Valid till"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Scope & Task Details"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "items",
+   "options": "Sale Order Amendment Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gst_payment_terms_section",
+   "fieldtype": "Section Break",
+   "label": "GST & Payment Terms"
+  },
+  {
+   "default": "0",
+   "fetch_from": "original_so.gst_applicability",
+   "fieldname": "gst_applicability",
+   "fieldtype": "Check",
+   "label": "GST Applicability",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "original_so.security_deposit_terms",
+   "fieldname": "security_deposit_terms",
+   "fieldtype": "Small Text",
+   "label": "Security Deposit Terms"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "revised_terms_conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Terms and Conditions"
+  },
+  {
+   "fetch_from": "original_so.tc_name",
+   "fieldname": "amended_terms",
+   "fieldtype": "Link",
+   "label": "Terms and Conditions",
+   "options": "Terms and Conditions"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "other_terms_section",
+   "fieldtype": "Section Break",
+   "label": "Other Terms"
+  },
+  {
+   "fetch_from": "original_so.custom_policy__obligation_details",
+   "fieldname": "policy_obligation_details",
+   "fieldtype": "Small Text",
+   "label": "Policy / obligation details"
+  },
+  {
+   "fetch_from": "original_so.custom_other_remarks",
+   "fieldname": "other_remarks",
+   "fieldtype": "Small Text",
+   "label": "Other Remarks"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "\nSales Order\nSales Order Amendment",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:(doc.source==\"Sales Order\" || doc.source==\"Sales Order Amendment\")",
+   "fieldname": "original_so",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Original Sales Order",
+   "options": "Sales Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_otpj",
+   "fieldtype": "Column Break",
+   "label": "Amendment Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "rate",
+   "fieldtype": "Check",
+   "label": "Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "quantity",
+   "fieldtype": "Check",
+   "label": "Quantity"
+  },
+  {
+   "default": "0",
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "Check",
+   "label": "Terms and Conditions"
+  },
+  {
+   "default": "0",
+   "fieldname": "tenure",
+   "fieldtype": "Check",
+   "label": "Tenure"
+  },
+  {
+   "depends_on": "eval:doc.source == \"Sales Order Amendment\"",
+   "fieldname": "amendment_so",
+   "fieldtype": "Link",
+   "label": "Amended Sales Order Amendment",
+   "options": "Sales Order Amendment"
+  },
+  {
+   "fieldname": "column_break_vbex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_isap",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "original_sales_order",
+   "fieldtype": "Attach",
+   "label": "Original Sales Order"
+  },
+  {
+   "fieldname": "supporting_document",
+   "fieldtype": "Attach",
+   "label": "Supporting Document"
+  },
+  {
+   "fieldname": "revised_terms_and_conditions",
+   "fieldtype": "Link",
+   "label": "Revised Terms and Conditions",
+   "options": "Terms and Conditions"
+  },
+  {
+   "fieldname": "revised_from_date",
+   "fieldtype": "Date",
+   "label": "Revised From Date"
+  },
+  {
+   "fieldname": "revised_to_date",
+   "fieldtype": "Date",
+   "label": "Revised To Date"
+  },
+  {
+   "fieldname": "section_break_nwse",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_gkrt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total"
+  },
+  {
+   "fieldname": "column_break_omiy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amendment_dates",
+   "fieldtype": "Date",
+   "label": "Amendment Date"
+  },
+  {
+   "fetch_from": "original_so.custom_service__work_order_no",
+   "fieldname": "service__work_order_no",
+   "fieldtype": "Data",
+   "label": "Service / Work Order No"
+  },
+  {
+   "fieldname": "gst_and_payment_terms_tab",
+   "fieldtype": "Tab Break",
+   "label": "GST and Payment Terms"
+  },
+  {
+   "fieldname": "payment_terms_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Terms"
+  },
+  {
+   "fetch_from": "original_so.payment_terms_template",
+   "fieldname": "payment_terms_template",
+   "fieldtype": "Link",
+   "label": "Payment Terms Template",
+   "options": "Payment Terms Template"
+  },
+  {
+   "fieldname": "payment_schedule",
+   "fieldtype": "Table",
+   "label": "Payment Schedule",
+   "options": "Payment Schedule"
+  },
+  {
+   "fieldname": "column_break_aggn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "original_so.gst_rule",
+   "fieldname": "gst_rule",
+   "fieldtype": "Select",
+   "label": "GST Rule",
+   "options": "\nRCM\nFCM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sales Order Amendment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "contract_from_date",
+   "fieldtype": "Date",
+   "label": "Sales Order Duration From",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_to_date",
+   "fieldtype": "Date",
+   "label": "Sales Order Duration To",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kfwa",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-20 19:32:38.427929",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Sales Order Amendment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Purchase Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Purchase User",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

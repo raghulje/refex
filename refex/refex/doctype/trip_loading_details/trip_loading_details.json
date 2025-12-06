@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "creation": "2025-08-05 16:10:37.605947",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "time_date_month",
+  "sale_order",
+  "loading_vendor_name",
+  "loading_vendor_code",
+  "challan_no",
+  "payment_type",
+  "column_break_fgns",
+  "overall_quantity",
+  "rate_per_mt",
+  "loading_cost",
+  "loading_vendor_bill_no",
+  "refex_diesel_slip_no",
+  "diesel_vendor_bill_no"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "time_date_month",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Time, Date, Month"
+  },
+  {
+   "columns": 2,
+   "fieldname": "sale_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sale Order",
+   "options": "Sales Order"
+  },
+  {
+   "columns": 2,
+   "fieldname": "loading_vendor_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Loading vendor Name",
+   "options": "Supplier"
+  },
+  {
+   "columns": 2,
+   "fetch_from": "loading_vendor_name.supplier_name",
+   "fieldname": "loading_vendor_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Loading vendor Code",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "challan_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Challan No"
+  },
+  {
+   "columns": 1,
+   "fieldname": "payment_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Payment Type",
+   "options": "Hourly\nMT\nRental"
+  },
+  {
+   "columns": 1,
+   "fieldname": "overall_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Overall Quantity",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "depends_on": "eval:doc.payment_type == 'MT'",
+   "fieldname": "rate_per_mt",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate per MT [If MT based service]",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "loading_cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Loading Cost for the quantity done",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "loading_vendor_bill_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Loading Vendor Bill No",
+   "options": "Purchase Invoice"
+  },
+  {
+   "columns": 2,
+   "fieldname": "refex_diesel_slip_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Refex Diesel slip no[if applicable]"
+  },
+  {
+   "columns": 2,
+   "fieldname": "diesel_vendor_bill_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Diesel vendor bill no",
+   "options": "Purchase Invoice"
+  },
+  {
+   "fieldname": "column_break_fgns",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-11 10:52:33.499305",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Trip Loading Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,327 @@
+{
+ "actions": [],
+ "autoname": "PO-AMD-.YYYY.-",
+ "creation": "2025-08-05 15:31:27.133610",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "amendment_details_section",
+  "source",
+  "original_purchase_order",
+  "amended_purchase_order_amendment",
+  "amendment_date",
+  "column_break_zhhe",
+  "rate",
+  "quantity",
+  "terms_and_conditions",
+  "tenure",
+  "amendment_reason",
+  "project_details_section",
+  "project_code",
+  "project_name",
+  "contract_valid_till",
+  "column_break_euiz",
+  "customer_name",
+  "customer_code",
+  "contract_from_date",
+  "contract_to_date",
+  "revised_from_date",
+  "revised_to_date",
+  "items_section",
+  "items",
+  "section_break_gsvv",
+  "grand_total",
+  "gst_payment_terms_section",
+  "gst_applicability",
+  "payment_terms",
+  "security_deposit_terms",
+  "attachments_section",
+  "original_sales_order",
+  "supporting_document",
+  "terms_and_conditions_section",
+  "amended_terms",
+  "revised_terms_and_conditions",
+  "diesel_procurement_section",
+  "amended_from",
+  "policy__obligation_details",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "amendment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Amendment Details"
+  },
+  {
+   "columns": 1,
+   "default": "Today",
+   "fieldname": "amendment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Amendment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Scope of Work"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Purchase Order Amendment Item"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "diesel_procurement_section",
+   "fieldtype": "Section Break",
+   "label": "Other Terms"
+  },
+  {
+   "fieldname": "column_break_zhhe",
+   "fieldtype": "Column Break",
+   "label": "Amendment Type"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Purchase Order Amendment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "\nPurchase Order\nPurchase Order Amendment",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:(doc.source==\"Purchase Order\" || doc.source==\"Purchase Order Amendment\")",
+   "fieldname": "original_purchase_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Original Purchase Order",
+   "options": "Purchase Order",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.source == \"Purchase Order Amendment\"",
+   "fieldname": "amended_purchase_order_amendment",
+   "fieldtype": "Link",
+   "label": "Amended Purchase Order Amendment",
+   "options": "Purchase Order Amendment"
+  },
+  {
+   "default": "0",
+   "fieldname": "rate",
+   "fieldtype": "Check",
+   "label": "Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "quantity",
+   "fieldtype": "Check",
+   "label": "Quantity"
+  },
+  {
+   "default": "0",
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "Check",
+   "label": "Terms and Conditions"
+  },
+  {
+   "default": "0",
+   "fieldname": "tenure",
+   "fieldtype": "Check",
+   "label": "Tenure"
+  },
+  {
+   "fieldname": "amendment_reason",
+   "fieldtype": "Small Text",
+   "label": "Amendment Reason"
+  },
+  {
+   "fieldname": "project_details_section",
+   "fieldtype": "Section Break",
+   "label": "Project Details"
+  },
+  {
+   "fetch_from": "project_code.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Project name"
+  },
+  {
+   "fetch_from": "original_purchase_order.project",
+   "fieldname": "project_code",
+   "fieldtype": "Link",
+   "label": "Project code",
+   "options": "Project",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "contract_valid_till",
+   "fieldtype": "Date",
+   "label": "Contract Valid till"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_euiz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer_name.customer_name",
+   "fieldname": "customer_code",
+   "fieldtype": "Data",
+   "label": "Customer code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_from_date",
+   "fieldtype": "Date",
+   "label": "Contract From Date"
+  },
+  {
+   "fieldname": "contract_to_date",
+   "fieldtype": "Date",
+   "label": "Contract To Date"
+  },
+  {
+   "fieldname": "revised_from_date",
+   "fieldtype": "Date",
+   "label": "Revised From Date"
+  },
+  {
+   "fieldname": "revised_to_date",
+   "fieldtype": "Date",
+   "label": "Revised To Date"
+  },
+  {
+   "fieldname": "section_break_gsvv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gst_payment_terms_section",
+   "fieldtype": "Section Break",
+   "label": "GST & Payment Terms"
+  },
+  {
+   "fieldname": "gst_applicability",
+   "fieldtype": "Small Text",
+   "label": "GST Applicability"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Link",
+   "label": "Payment Terms",
+   "options": "Payment Term"
+  },
+  {
+   "fieldname": "security_deposit_terms",
+   "fieldtype": "Small Text",
+   "label": "Security Deposit Terms"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "attachments_section",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "original_sales_order",
+   "fieldtype": "Attach",
+   "label": "Original Sales Order"
+  },
+  {
+   "fieldname": "supporting_document",
+   "fieldtype": "Attach",
+   "label": "Supporting Document"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "terms_and_conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Terms and Conditions"
+  },
+  {
+   "fieldname": "amended_terms",
+   "fieldtype": "Link",
+   "label": "Terms and Conditions",
+   "options": "Terms and Conditions"
+  },
+  {
+   "fieldname": "revised_terms_and_conditions",
+   "fieldtype": "Link",
+   "label": "Revised Terms and Conditions",
+   "options": "Terms and Conditions"
+  },
+  {
+   "fieldname": "policy__obligation_details",
+   "fieldtype": "Small Text",
+   "label": "Policy / obligation details"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-20 14:40:30.807633",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Purchase Order Amendment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Purchase Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Purchase User",
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

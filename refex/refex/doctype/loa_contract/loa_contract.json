@@ -1,0 +1,369 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-08-02 12:00:00",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "contract_details_section",
+  "naming_series",
+  "loa_contract",
+  "loa_number_reference",
+  "date",
+  "column_break_basic_1",
+  "customer",
+  "customer_code",
+  "address_for_communication",
+  "contract_value_section",
+  "total_contract_value_incl_gst",
+  "total_contract_value_excl_gst",
+  "column_break_value_1",
+  "overall_quantity_to_be_executed",
+  "source_location",
+  "type_of_contract",
+  "scope_work_description_section",
+  "scope_of_work_description",
+  "contract_terms_section",
+  "gst_toll_exclusion",
+  "gst_details",
+  "rank_evaluation",
+  "column_break_terms_1",
+  "contract_valid_from",
+  "contract_valid_till",
+  "duration_period",
+  "contract_clauses_section",
+  "deviation_allowed",
+  "diesel_price_variation_clause",
+  "column_break_clauses_1",
+  "payment_terms",
+  "gem_details_section",
+  "gem_contract_number_id",
+  "gem_other_charges",
+  "column_break_gem_1",
+  "gem_refundable_non_refundable",
+  "gem_amount",
+  "bank_guarantee_section",
+  "bank_guarantee_details",
+  "scope_of_work_details_section",
+  "scope_of_work_table",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "contract_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Details",
+   "options": "fa fa-file-contract"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "LOA-.YYYY.-",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "loa_contract",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "LOA / Contract",
+   "reqd": 1
+  },
+  {
+   "fieldname": "loa_number_reference",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "LOA Number / Reference",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_code",
+   "fieldtype": "Data",
+   "label": "Customer Code",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.customer_primary_address",
+   "fieldname": "address_for_communication",
+   "fieldtype": "Small Text",
+   "label": "Address for Communication",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_value_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Value & Quantity",
+   "options": "fa fa-money"
+  },
+  {
+   "fieldname": "total_contract_value_incl_gst",
+   "fieldtype": "Currency",
+   "label": "Total Contract Value (Incl GST)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_contract_value_excl_gst",
+   "fieldtype": "Currency",
+   "label": "Total Contract Value (Excl GST)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_value_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "overall_quantity_to_be_executed",
+   "fieldtype": "Float",
+   "label": "Overall Quantity to be Executed",
+   "precision": "2"
+  },
+  {
+   "fieldname": "source_location",
+   "fieldtype": "Data",
+   "label": "Source Location"
+  },
+  {
+   "fieldname": "type_of_contract",
+   "fieldtype": "Select",
+   "label": "Type of Contract",
+   "options": "\nRate Contract\nDisposal Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "scope_work_description_section",
+   "fieldtype": "Section Break",
+   "label": "Scope of Work Description",
+   "options": "fa fa-tasks"
+  },
+  {
+   "fieldname": "scope_of_work_description",
+   "fieldtype": "Long Text",
+   "label": "Scope of Work"
+  },
+  {
+   "fieldname": "contract_terms_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Terms & Validity",
+   "options": "fa fa-calendar"
+  },
+  {
+   "fieldname": "gst_toll_exclusion",
+   "fieldtype": "Select",
+   "label": "GST / Toll Exclusion",
+   "options": "\nIncluded\nExcluded"
+  },
+  {
+   "fieldname": "gst_details",
+   "fieldtype": "Select",
+   "label": "GST Details",
+   "options": "\nRCM\nForward Charge"
+  },
+  {
+   "description": "Based on the LOA received",
+   "fieldname": "rank_evaluation",
+   "fieldtype": "Data",
+   "label": "Rank / Evaluation"
+  },
+  {
+   "fieldname": "column_break_terms_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_valid_from",
+   "fieldtype": "Date",
+   "label": "Contract Valid From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contract_valid_till",
+   "fieldtype": "Date",
+   "label": "Contract Valid Till",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contract_clauses_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Clauses & Payment",
+   "options": "fa fa-gavel"
+  },
+  {
+   "description": "Based on the LOA received",
+   "fieldname": "deviation_allowed",
+   "fieldtype": "Percent",
+   "label": "Deviation Allowed (%)",
+   "precision": "2"
+  },
+  {
+   "description": "Based on the LOA received",
+   "fieldname": "diesel_price_variation_clause",
+   "fieldtype": "Text",
+   "label": "Diesel Price Variation Clause"
+  },
+  {
+   "fieldname": "column_break_clauses_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Link",
+   "label": "Payment Terms",
+   "options": "Payment Terms Template"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "gem_details_section",
+   "fieldtype": "Section Break",
+   "label": "GEM Details",
+   "options": "fa fa-gem"
+  },
+  {
+   "description": "Based on the LOA received",
+   "fieldname": "gem_contract_number_id",
+   "fieldtype": "Data",
+   "label": "GEM Contract Number/ID"
+  },
+  {
+   "description": "Based on the LOA received",
+   "fieldname": "gem_other_charges",
+   "fieldtype": "Percent",
+   "label": "GEM / Other Charges",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_gem_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "gem_refundable_non_refundable",
+   "fieldtype": "Check",
+   "label": "GEM Refundable/Non-refundable"
+  },
+  {
+   "depends_on": "gem_refundable_non_refundable",
+   "fieldname": "gem_amount",
+   "fieldtype": "Currency",
+   "label": "GEM Amount"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "bank_guarantee_section",
+   "fieldtype": "Section Break",
+   "label": "Bank Guarantee Details",
+   "options": "fa fa-university"
+  },
+  {
+   "fieldname": "bank_guarantee_details",
+   "fieldtype": "Text",
+   "label": "Bank Guarantee Details"
+  },
+  {
+   "fieldname": "scope_of_work_details_section",
+   "fieldtype": "Section Break",
+   "label": "Scope of Work Details",
+   "options": "fa fa-table"
+  },
+  {
+   "fieldname": "scope_of_work_table",
+   "fieldtype": "Table",
+   "label": "Scope of Work",
+   "options": "LOA Contract Scope of Work",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "ignore_user_permissions": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "LOA Contract",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "duration_period",
+   "fieldtype": "Duration",
+   "label": "Duration Period"
+  }
+ ],
+ "icon": "fa fa-file-contract",
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-14 17:44:58.332933",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "LOA Contract",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,272 @@
+{
+ "actions": [],
+ "autoname": "FIT-UTIL-.YYYY.-",
+ "creation": "2025-08-05 15:15:34.671978",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "item_group",
+  "item_serial_no",
+  "item_code",
+  "vehicle_number",
+  "fitment_date",
+  "removed_date",
+  "odometer_at_fitment",
+  "odometer_at_removal",
+  "usage_km",
+  "column_break_mmwd",
+  "job_card_id",
+  "fitment_done_by",
+  "technician_vendor",
+  "vendor_name",
+  "warehouse_store",
+  "location_site",
+  "status",
+  "section_break_ibid",
+  "remarks",
+  "tyre_section",
+  "position",
+  "rethreaded",
+  "rethreaded_serial_no",
+  "column_break_weiv",
+  "rethreaded_cost",
+  "rethreaded_usage_km"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Group",
+   "options": "Item Group",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "item_serial_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Serial No",
+   "options": "Serial No",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "vehicle_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle Number",
+   "options": "Vehicle",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "fitment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Fitment Date",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "removed_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Removed Date"
+  },
+  {
+   "columns": 1,
+   "fieldname": "odometer_at_fitment",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Odometer at Fitment",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "odometer_at_removal",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Odometer at Removal"
+  },
+  {
+   "columns": 1,
+   "fieldname": "usage_km",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Usage KM",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "job_card_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Job Card ID",
+   "options": "Maintenance Job Card"
+  },
+  {
+   "columns": 1,
+   "fieldname": "fitment_done_by",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Fitment done by",
+   "options": "In-house\nOutsourced\nOEM"
+  },
+  {
+   "columns": 1,
+   "fieldname": "technician_vendor",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Technician / Vendor",
+   "options": "Technician\nVendor"
+  },
+  {
+   "columns": 2,
+   "depends_on": "eval:doc.technician_vendor == 'Vendor'",
+   "fieldname": "vendor_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vendor Name",
+   "options": "Supplier"
+  },
+  {
+   "columns": 2,
+   "fieldname": "warehouse_store",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warehouse / Store",
+   "options": "Warehouse"
+  },
+  {
+   "columns": 2,
+   "fieldname": "location_site",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Location / Site",
+   "options": "Location"
+  },
+  {
+   "columns": 1,
+   "default": "In Use",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "In Use\nRemoved\nScrapped\nReplaced\nRethreaded\nSpare",
+   "reqd": 1
+  },
+  {
+   "columns": 4,
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.item_group == 'Tyre'",
+   "fieldname": "tyre_section",
+   "fieldtype": "Section Break",
+   "label": "Tyre Details"
+  },
+  {
+   "columns": 2,
+   "depends_on": "eval:doc.item_group == 'Tyre'",
+   "fieldname": "position",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Position",
+   "options": "Front Left\nFront Right\nRear Left - Axle 1\nRear Right - Axle 1\nRear Left - Axle 2\nRear Right - Axle 2\nStepney\nSpare"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "depends_on": "eval:doc.item_group == 'Tyre'",
+   "fieldname": "rethreaded",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Rethreaded"
+  },
+  {
+   "columns": 2,
+   "depends_on": "eval:doc.rethreaded == 1",
+   "fieldname": "rethreaded_serial_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Rethreaded Serial No"
+  },
+  {
+   "columns": 1,
+   "depends_on": "eval:doc.rethreaded == 1",
+   "fieldname": "rethreaded_cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rethreaded Cost"
+  },
+  {
+   "columns": 1,
+   "depends_on": "eval:doc.rethreaded == 1",
+   "fieldname": "rethreaded_usage_km",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rethreaded Usage KM",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_mmwd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ibid",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_weiv",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "links": [],
+ "modified": "2025-08-11 10:44:19.654235",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Fitment and Utilization",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Fleet Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Fleet User",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

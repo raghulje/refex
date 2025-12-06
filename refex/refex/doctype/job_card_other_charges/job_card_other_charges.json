@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "creation": "2025-08-05 18:12:46.585899",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "labour_charges",
+  "repair_amount",
+  "parts_amount",
+  "gst_on_maintenance",
+  "column_break_acjx",
+  "gst_on_spare_parts",
+  "total_amount",
+  "tds",
+  "net_amount"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "labour_charges",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Labour Charges"
+  },
+  {
+   "columns": 2,
+   "fieldname": "repair_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Repair Amount"
+  },
+  {
+   "columns": 2,
+   "fieldname": "parts_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Parts Amount"
+  },
+  {
+   "columns": 2,
+   "fieldname": "gst_on_maintenance",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "GST on Maintenance"
+  },
+  {
+   "columns": 2,
+   "fieldname": "gst_on_spare_parts",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "GST on Spare/Parts"
+  },
+  {
+   "columns": 2,
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "tds",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "TDS"
+  },
+  {
+   "columns": 2,
+   "fieldname": "net_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_acjx",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-11 10:46:34.400275",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Job Card Other Charges",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

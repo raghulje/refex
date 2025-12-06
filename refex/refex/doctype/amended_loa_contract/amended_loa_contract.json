@@ -1,0 +1,331 @@
+{
+ "actions": [],
+ "autoname": "AMD-.YYYY.-",
+ "creation": "2025-08-05 14:56:42.770732",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "amendment_details_section",
+  "amendment_no",
+  "amendment_date",
+  "loa_contract",
+  "amendment_reason",
+  "basic_info_section",
+  "project",
+  "project_code",
+  "contract_details_section",
+  "date",
+  "customer",
+  "customer_code",
+  "address",
+  "scope_of_work_text",
+  "old_total_contract_value_incl_gst",
+  "new_total_contract_value_incl_gst",
+  "column_break_1",
+  "old_total_contract_value_excl_gst",
+  "new_total_contract_value_excl_gst",
+  "total_old_quantity_to_be_disposed",
+  "total_new_quantity_to_be_disposed",
+  "gst_toll_exclusion",
+  "rank_evaluation",
+  "schedule_terms_section",
+  "contract_valid_from",
+  "contract_valid_till",
+  "old_duration_period",
+  "new_duration_period",
+  "deviation_allowed_percent",
+  "diesel_price_variation_clause",
+  "column_break_2",
+  "payment_terms",
+  "gem_contract_number",
+  "gem_other_charges",
+  "bank_guarantee_details",
+  "scope_of_work_section",
+  "scope_of_work",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "amendment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Amendment Details"
+  },
+  {
+   "default": "AMD-.YYYY.-",
+   "fieldname": "amendment_no",
+   "fieldtype": "Data",
+   "label": "Amendment No",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "amendment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Amendment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "loa_contract",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "LOA / Contract",
+   "options": "LOA Contract",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amendment_reason",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Amendment Reason",
+   "reqd": 1
+  },
+  {
+   "fieldname": "basic_info_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Info"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "project.project_name",
+   "fieldname": "project_code",
+   "fieldtype": "Data",
+   "label": "Project Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Details"
+  },
+  {
+   "fetch_from": "loa_contract.date",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_code",
+   "fieldtype": "Data",
+   "label": "Customer Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "scope_of_work_text",
+   "fieldtype": "Long Text",
+   "label": "Scope of Work"
+  },
+  {
+   "fetch_from": "loa_contract.total_contract_value_incl_gst",
+   "fieldname": "old_total_contract_value_incl_gst",
+   "fieldtype": "Currency",
+   "label": "Old Total Contract Value (Incl GST)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_total_contract_value_incl_gst",
+   "fieldtype": "Currency",
+   "label": "New Total contract value ( Incl GST)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "loa_contract.total_contract_value_excl_gst",
+   "fieldname": "old_total_contract_value_excl_gst",
+   "fieldtype": "Currency",
+   "label": "Total Contract Value (Excl GST)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_total_contract_value_excl_gst",
+   "fieldtype": "Currency",
+   "label": "New Total contract value ( Excl GST)",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "loa_contract.overall_quantity_to_be_executed",
+   "fieldname": "total_old_quantity_to_be_disposed",
+   "fieldtype": "Int",
+   "label": "Total old Quantity to be disposed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_new_quantity_to_be_disposed",
+   "fieldtype": "Int",
+   "label": "Total new Quantity to be disposed"
+  },
+  {
+   "fetch_from": "loa_contract.gst_toll_exclusion",
+   "fieldname": "gst_toll_exclusion",
+   "fieldtype": "Select",
+   "label": "GST / Toll Exclusion",
+   "options": "\nIncluded\nExcluded",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "loa_contract.rank_evaluation",
+   "fieldname": "rank_evaluation",
+   "fieldtype": "Text",
+   "label": "Rank / Evaluation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "schedule_terms_section",
+   "fieldtype": "Section Break",
+   "label": "Schedule & Terms"
+  },
+  {
+   "fetch_from": "loa_contract.contract_valid_from",
+   "fieldname": "contract_valid_from",
+   "fieldtype": "Date",
+   "label": "Contract Valid from",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "loa_contract.contract_valid_till",
+   "fieldname": "contract_valid_till",
+   "fieldtype": "Date",
+   "label": "Contract Valid Till",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "loa_contract.contract_valid_till",
+   "fieldname": "old_duration_period",
+   "fieldtype": "Data",
+   "label": "Old Duration Period",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_duration_period",
+   "fieldtype": "Data",
+   "label": "New Duration Period"
+  },
+  {
+   "fetch_from": "loa_contract.deviation_allowed",
+   "fieldname": "deviation_allowed_percent",
+   "fieldtype": "Percent",
+   "label": "Deviation Allowed (%)",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "loa_contract.diesel_price_variation_clause",
+   "fieldname": "diesel_price_variation_clause",
+   "fieldtype": "Text",
+   "label": "Diesel Price Variation Clause",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "loa_contract.payment_terms",
+   "fieldname": "payment_terms",
+   "fieldtype": "Link",
+   "label": "Payment Terms",
+   "options": "Payment Terms Template",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "loa_contract.gem_contract_number_id",
+   "fieldname": "gem_contract_number",
+   "fieldtype": "Data",
+   "label": "GEM Contract Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "loa_contract.gem_other_charges",
+   "fieldname": "gem_other_charges",
+   "fieldtype": "Percent",
+   "label": "GEM /OTHER CHARGES",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "loa_contract.bank_guarantee_details",
+   "fieldname": "bank_guarantee_details",
+   "fieldtype": "Text",
+   "label": "Bank Gurantee details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "scope_of_work_section",
+   "fieldtype": "Section Break",
+   "label": "Scope of Work"
+  },
+  {
+   "fieldname": "scope_of_work",
+   "fieldtype": "Table",
+   "label": "Scope of Work",
+   "options": "Amended LOA Contract Scope"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Amended LOA Contract",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-11 10:53:41.259549",
+ "modified_by": "Administrator",
+ "module": "Refex",
+ "name": "Amended LOA Contract",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Project Manager",
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "amendment_no",
+ "track_changes": 1
+}
